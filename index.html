@@ -3,81 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Obras Dória | Construção, Reforma e Gestão de Obras — Nova Iguaçu e Rio de Janeiro</title>
-<meta name="description" content="Obras Dória: execução e gestão de obras no Rio de Janeiro. Construção, reforma, alvenaria, acabamento e manutenção. Equipe treinada e acompanhamento em todas as etapas. Atendemos Nova Iguaçu e região.">
-<meta property="og:title" content="Obras Dória | Construindo confiança. Entregando excelência."> 
-<meta property="og:description" content="Execução e gestão de obras no Rio de Janeiro. Equipe treinada, acompanhamento em todas as etapas e orçamento sem compromisso.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
+<title>Obras Dória | Construção, Reforma e Gestão de Obras</title>
+<meta name="description" content="Obras Dória: execução e gestão de obras no Rio de Janeiro e Nova Iguaçu. Construção, reforma, alvenaria, acabamento e gestão profissional.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --escuro: #2c3e50; /* Um azul-cinza mais escuro e sóbrio */
-    --claro: #ecf0f1; /* Um cinza muito claro, quase branco, para fundos */
-    --destaque: #f39c12; /* Um laranja vibrante para elementos de destaque */
-    --texto: #34495e; /* Um azul-cinza escuro para o texto principal */
-    --zap: #27ae60; /* Um verde ligeiramente diferente para o WhatsApp */
-    --branco: #ffffff;
+    --bg-escuro: #0a192f;
+    --card-escuro: #0d213a;
+    --azul-header: #071224;
+    --dourado: #e6a100;
+    --dourado-hover: #cc8f00;
+    --texto-escuro: #1a202c;
+    --texto-suave: #4a5568;
+    --texto-claro: #ffffff;
+    --cinza-fundo: #f8fafc;
+    --zap-verde: #1e3a5f; /* Segue o tom escuro elegante dos botões da referência */
   }
   html{scroll-behavior:smooth}
-  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--texto);line-height:1.65;background:var(--branco)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  header{background:var(--escuro);color:var(--branco);padding:16px 0;position:sticky;top:0;z-index:10}
-  header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-  .logo{font-size:1.15rem;font-weight:700;letter-spacing:.5px}
-  .logo span{color:var(--destaque)}
-  .logo small{display:block;font-size:.6rem;font-weight:400;letter-spacing:2px;color:#bdc3c7;text-transform:uppercase}
-  nav a{color:#ecf0f1;text-decoration:none;margin-left:22px;font-size:.92rem;transition: color 0.3s ease;}
-  nav a:hover{color:var(--destaque)}
-  .hero{
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('hero-bg.jpg') center/cover; /* Substitua 'hero-bg.jpg' por uma foto profissional de obra */
-    color:var(--branco);
-    padding:104px 0;
-    text-align: center; /* Centralizar conteúdo no hero */
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--texto-escuro);background:#fff;line-height:1.5}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  
+  /* HEADER */
+  header{background:var(--azul-header);padding:18px 0;position:sticky;top:0;z-index:100}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo img{height:42px;width:auto}
+  nav a{color:#cbd5e1;text-decoration:none;margin-left:28px;font-size:0.95rem;font-weight:500;transition:color 0.2s}
+  nav a:hover{color:var(--dourado)}
+  
+  /* HERO SECTION */
+  .hero{background:linear-gradient(180deg, var(--azul-header) 0%, var(--bg-escuro) 100%);color:var(--texto-claro);padding:60px 0 80px 0;text-align:center;position:relative}
+  .hero-logo{max-width:220px;height:auto;margin:0 auto 24px auto;display:block}
+  .hero h1{font-size:2.8rem;font-weight:800;line-height:1.2;max-width:800px;margin:0 auto 16px auto}
+  .hero .lema{font-size:1.15rem;color:#94a3b8;margin-bottom:36px}
+  .hero-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+  
+  /* BOTOES */
+  .btn{display:inline-block;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;transition:all 0.3s;border:2px solid transparent}
+  .btn-dourado-solido{background:linear-gradient(135deg, #f3b11b 0%, #c98a00 100%);color:#0f172a}
+  .btn-dourado-solido:hover{opacity:0.95;transform:translateY(-2px)}
+  .btn-dourado-outline{background:transparent;color:var(--dourado);border-color:var(--dourado)}
+  .btn-dourado-outline:hover{background:rgba(230,161,0,0.1);transform:translateY(-2px)}
+  
+  /* SOBRE & GESTOR */
+  .sobre{padding:80px 0;background:#fff}
+  .sobre-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start}
+  .sobre-conteudo h2{font-size:2.2rem;color:var(--texto-escuro);font-weight:800;line-height:1.2;margin-bottom:20px}
+  .lista-check{list-style:none;margin:24px 0}
+  .lista-check li{position:relative;padding-left:28px;margin-bottom:14px;color:var(--texto-suave);font-size:1.05rem;font-weight:500}
+  .lista-check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--dourado);font-weight:900;font-size:1.1rem}
+  
+  /* CARDS DOURADOS */
+  .cards-pilares{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:36px}
+  .card-pilar{background:linear-gradient(135deg, #f5b72b 0%, #d49400 100%);padding:24px 16px;border-radius:12px;text-align:center;color:#0f172a;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+  .card-pilar .icone{font-size:2rem;margin-bottom:8px}
+  .card-pilar h3{font-size:1.1rem;font-weight:800;margin-bottom:8px}
+  .card-pilar p{font-size:0.85rem;line-height:1.4;font-weight:600;opacity:0.9}
+  
+  /* CARD LEANDRO DORIA */
+  .card-gestor{background:var(--card-escuro);border-radius:16px;overflow:hidden;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.2)}
+  .card-gestor img{width:100%;height:320px;object-fit:cover;object-position:top;display:block}
+  .card-gestor-body{padding:28px}
+  .card-gestor-body h3{font-size:1.5rem;color:var(--dourado);font-weight:800;margin-bottom:10px}
+  .card-gestor-body p{color:#cbd5e1;font-size:0.95rem;line-height:1.6}
+  
+  /* GALERIA NOSSAS OBRAS */
+  .obras{padding:40px 0 80px 0;background:#fff}
+  .obras h2{font-size:2.2rem;color:var(--texto-escuro);font-weight:800;margin-bottom:32px}
+  .obras-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .obra-card{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+  .obra-card img{width:100%;height:340px;object-fit:cover;display:block}
+  
+  /* FOOTER */
+  footer{background:var(--azul-header);color:#94a3b8;padding:24px 0}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer nav a{color:#94a3b8;text-decoration:none;font-size:0.9rem;margin-right:20px}
+  footer nav a:hover{color:var(--dourado)}
+  .btn-whatsapp-footer{background:#1e293b;color:#fff;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #334155;transition:all 0.3s}
+  .btn-whatsapp-footer:hover{background:var(--dourado);color:#0f172a}
+  
+  /* RESPONSIVIDADE */
+  @media (max-width: 900px){
+    .sobre-grid, .obras-grid, .cards-pilares{grid-template-columns:1fr}
+    .hero h1{font-size:2rem}
+    nav{display:none}
   }
-  .local{display:inline-block;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--destaque);margin-bottom:16px}
-  .hero h1{font-size:2.5rem;line-height:1.2;max-width:780px;margin: 0 auto 18px auto;} /* Centralizar H1 */
-  .hero .lema{font-size:1.15rem;max-width:660px;color:#dfe6e9;margin: 0 auto;} /* Centralizar lema */
-  .btn{display:inline-block;background:var(--destaque);color:var(--escuro);padding:15px 32px;border-radius:4px;text-decoration:none;font-weight:600;margin:22px 10px 0 0;transition: background 0.3s ease;}
-  .btn:hover{background: #e67e22;} /* Laranja mais escuro no hover */
-  .btn.vazio{background:transparent;color:var(--branco);border:1.5px solid var(--branco)}
-  .btn.vazio:hover{background: rgba(255, 255, 255, 0.1);}
-  .btn.verde{background:var(--zap);color:var(--branco)}
-  .btn.verde:hover{background: #2ecc71;}
-  section{padding:76px 0}
-  .cinza{background:var(--claro)}
-  h2{color:var(--escuro);font-size:1.85rem;margin-bottom:14px}
-  .sub{margin-bottom:40px;max-width:680px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
-  .card{background:var(--branco);padding:30px;border-radius:6px;border-top:3px solid var(--destaque);box-shadow:0 1px 4px rgba(0,0,0,.07)}
-  .card h3{color:var(--escuro);font-size:1.12rem;margin-bottom:10px}
-  .card a{color:var(--escuro);font-weight:600}
-  .card img{ max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 4px; } /* Estilo para imagens nos cards */
-  ul{margin:14px 0 0 20px}
-  li{margin-bottom:7px}
-  .duplo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start}
-  .assina{margin-top:18px;padding-left:16px;border-left:3px solid var(--destaque);font-style:italic}
-  .funcoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  .funcoes span{background:var(--branco);border:1px solid #dcd7d0;border-radius:50px;padding:10px 22px;font-weight:600;color:var(--escuro)}
-  .pilares{list-style:none;margin:0}
-  .pilares li{padding-left:26px;position:relative;margin-bottom:12px}
-  .pilares li::before{content:"✓";position:absolute;left:0;color:var(--destaque);font-weight:700}
-  table{border-collapse:collapse;width:100%;max-width:340px}
-  td{padding:6px 0;border-bottom:1px solid #e2ddd6}
-  td:last-child{text-align:right;font-weight:600;color:var(--escuro)}
-  footer{background:var(--escuro);color:#bdc3c7;padding:46px 0;font-size:.9rem}
-  footer a{color:var(--destaque);text-decoration:none}
-  footer h4{color:var(--branco);margin-bottom:6px;font-size:1rem}
-  .flutuante{position:fixed;bottom:22px;right:22px;background:var(--zap);color:var(--branco);padding:15px 26px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:20;transition: transform 0.3s ease;}
-  .flutuante:hover{transform: scale(1.05);}
-  @media(max-width:600px){.hero{padding:68px 0}.hero h1{font-size:1.7rem}nav a{margin:0 14px 0 0}.flutuante{padding:13px 20px;font-size:.9rem}}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="wrap">
-    <div class="logo">OBRAS <span>DÓRIA</span><small>Construção Civil</small></div>
+    <a href="#" class="logo">
+      <img src="WhatsApp Image 2026-08-19 at 16.58.40 (2).jpeg" alt="Obras Dória Logo">
+    </a>
     <nav>
       <a href="#sobre">Quem somos</a>
       <a href="#servicos">Serviços</a>
@@ -87,122 +107,93 @@
   </div>
 </header>
 
-<div class="hero">
+<!-- HERO SECTION -->
+<section class="hero">
   <div class="wrap">
-    <span class="local">Rio de Janeiro · Nova Iguaçu e região</span>
+    <img class="hero-logo" src="WhatsApp Image 2026-08-19 at 16.58.40 (2).jpeg" alt="Obras Dória">
     <h1>Sua obra em boas mãos, do primeiro tijolo à entrega</h1>
-    <p class="lema">Execução e gestão de obras com equipe treinada, planejamento e acompanhamento em todas as etapas. Construção, reforma, manutenção e acabamento para residências, comércios e empresas.</p>
-    <a class="btn verde" href="https://wa.me/5521976769602?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Obras%20D%C3%B3ria%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a>
-    <a class="btn vazio" href="#trabalhe">Quero trabalhar</a>
+    <p class="lema">Execução e gestão completa com planejamento, transparência e equipe qualificada.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5521975575029" target="_blank" class="btn btn-dourado-solido">Solicitar orçamento</a>
+      <a href="#trabalhe" class="btn btn-dourado-outline">Quero trabalhar</a>
+    </div>
   </div>
-</div>
+</section>
 
-<section id="sobre">
+<!-- SOBRE E PILARES -->
+<section class="sobre" id="sobre">
   <div class="wrap">
-    <h2>Quem somos</h2>
-    <div class="duplo">
-      <div>
-        <p>Construir não é apenas levantar paredes. É transformar planos em realidade, com responsabilidade, organização e confiança.</p>
-        <p style="margin-top:14px">À frente da empresa está <strong>Leandro Dória</strong>, pedreiro e gestor de obras com 12 anos de experiência na construção civil. Ao longo dessa trajetória, ficou claro que muitas pessoas têm o sonho de construir ou reformar, mas encontram dificuldade em saber quem contratar, como acompanhar o serviço e em quem confiar.</p>
-        <p style="margin-top:14px">A Obras Dória nasceu para resolver isso: conectamos contratantes aos profissionais certos e acompanhamos a execução da obra, trazendo mais organização, transparência e segurança para cada etapa.</p>
-        <p class="assina">Construindo confiança. Entregando excelência.</p>
-      </div>
-      <div class="card">
-        <h3>Nossos pilares</h3>
-        <ul class="pilares">
-          <li>Qualidade em cada detalhe</li>
-          <li>Transparência em todas as etapas</li>
-          <li>Execução com compromisso e responsabilidade</li>
-          <li>Equipes qualificadas e acompanhadas</li>
+    <div class="sobre-grid">
+      
+      <!-- LADO ESQUERDO: TEXTO E PILARES DOURADOS -->
+      <div class="sobre-conteudo">
+        <h2>Construindo confiança.<br>Entregando excelência.</h2>
+        
+        <ul class="lista-check">
+          <li>Da fundação ao acabamento em Nova Iguaçu e Rio de Janeiro - RJ</li>
+          <li>Gestão de obras eficiente com controle total de custos e prazos</li>
+          <li>Confiança, transparência e respeito ao seu investimento</li>
         </ul>
+
+        <div class="cards-pilares" id="servicos">
+          <div class="card-pilar">
+            <div class="icone">🛠️</div>
+            <h3>Serviços</h3>
+            <p>Conectamos você ao profissional certo para a sua obra.</p>
+          </div>
+          <div class="card-pilar">
+            <div class="icone">👷‍♂️</div>
+            <h3>Gestão de Obras</h3>
+            <p>Organização, acompanhamento e controle do início ao fim.</p>
+          </div>
+          <div class="card-pilar">
+            <div class="icone">🤝</div>
+            <h3>Transparência</h3>
+            <p>Compromisso com prazos, qualidade e seu orçamento.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO: CARD LEANDRO DORIA -->
+      <div class="card-gestor">
+        <img src="WhatsApp Image 2026-08-17 at 11.58.20.jpeg" alt="Leandro Dória - Fundador e Gestor">
+        <div class="card-gestor-body">
+          <h3>Leandro Dória</h3>
+          <p>Com mais de 12 anos de experiência na construção civil, Leandro Dória atua como pedreiro, gestor de obras e intermediador. Cuida de cada detalhe com rigor para entregar muito mais do que construções: entrega tranquilidade e segurança aos seus clientes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOSSAS OBRAS -->
+<section class="obras" id="obras">
+  <div class="wrap">
+    <h2>Nossas Obras</h2>
+    <div class="obras-grid">
+      <div class="obra-card">
+        <img src="Alvenaria de muro.jpeg" alt="Execução de Alvenaria e Estrutura">
+      </div>
+      <div class="obra-card">
+        <img src="WhatsApp Image 2026-08-17 at 11.58.14.jpeg" alt="Acabamento e Área Gourmet">
       </div>
     </div>
   </div>
 </section>
 
-<section class="cinza" id="servicos">
+<!-- FOOTER -->
+<footer id="contato">
   <div class="wrap">
-    <h2>Serviços</h2>
-    <p class="sub">Atendemos residências, comércios e empresas — desde a construção do zero até reformas pontuais e manutenção.</p>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1541976844346-f18aeac57b06?q=80&w=600&auto=format&fit=crop" alt="Execução de obras">
-        <h3>Execução de obras</h3>
-        <p>Construção, reforma, alvenaria, acabamento e manutenção, com equipe própria e parceira.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1503387762-592dea58dd41?q=80&w=600&auto=format&fit=crop" alt="Gestão e acompanhamento">
-        <h3>Gestão e acompanhamento</h3>
-        <p>Planejamento das etapas, controle do andamento e comunicação clara sobre o que está sendo feito na sua obra.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Intermediação de profissionais">
-        <h3>Intermediação de profissionais</h3>
-        <p>Conectamos contratantes a profissionais da construção civil já avaliados por nós, e fazemos a interface entre as duas partes.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=600&auto=format&fit=crop" alt="Gerenciamento de equipes">
-        <h3>Gerenciamento de equipes</h3>
-        <p>Organização e coordenação da equipe em campo, para que cada etapa saia na ordem e no prazo.</p>
-      </div>
-    </div>
-    <div class="funcoes">
-      <span>Pedreiro</span>
-      <span>Servente</span>
-      <span>Pintor</span>
-    </div>
-  </div>
-</section>
-
-<section id="trabalhe">
-  <div class="wrap">
-    <h2>Trabalhe conosco</h2>
-    <p class="sub">Se você atua como pedreiro, servente ou pintor no Rio de Janeiro, cadastre-se para ser considerado nas próximas oportunidades. Envie uma mensagem com seu nome, função, tempo de experiência e o bairro onde mora.</p>
-    <a class="btn verde" href="https://wa.me/5521976769602?text=Ol%C3%A1!%20Quero%20me%20cadastrar%20como%20colaborador%20da%20Obras%20D%C3%B3ria." target="_blank" rel="noopener">Cadastrar pelo WhatsApp</a>
-  </div>
-</section>
-
-<section class="cinza" id="contato">
-  <div class="wrap">
-    <h2>Contato</h2>
-    <p class="sub">Tem uma obra para começar, reformar ou finalizar? Fale com a gente e receba um orçamento.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>WhatsApp e telefone</h3>
-        <p><a href="https://wa.me/5521976769602" target="_blank" rel="noopener">(21) 97676-9602</a></p>
-        <p style="margin-top:8px;font-size:.92rem">Atendimento mais rápido por mensagem.</p>
-      </div>
-      <div class="card">
-        <h3>Horário de atendimento</h3>
-        <table>
-          <tr><td>Segunda a sexta</td><td>08:00 – 17:00</td></tr>
-          <tr><td>Sábado e domingo</td><td>Fechado</td></tr>
-        </table>
-      </div>
-      <div class="card">
-        <h3>Área atendida</h3>
-        <p>Nova Iguaçu e proximidades, com atendimento no Rio de Janeiro e região metropolitana.</p>
-      </div>
-      <div class="card">
-        <h3>Instagram</h3>
-        <p><a href="https://instagram.com/obrasdoria" target="_blank" rel="noopener">@obrasdoria</a></p>
-        <p style="margin-top:8px;font-size:.92rem">Acompanhe obras em andamento e serviços entregues.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <h4>OBRAS DÓRIA</h4>
-    <p>Construindo confiança. Entregando excelência.</p>
-    <p style="margin-top:14px">Prestador de serviços de construção civil · Nova Iguaçu e Rio de Janeiro – RJ</p>
-    <p style="margin-top:6px">WhatsApp <a href="https://wa.me/5521976769602">(21) 97676-9602</a> · Instagram <a href="https://instagram.com/obrasdoria">@obrasdoria</a></p>
-    <p style="margin-top:18px">© 2026 Obras Dória. Todos os direitos reservados.</p>
+    <nav>
+      <a href="#sobre">Quem somos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhe">Trabalhe conosco</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="https://wa.me/5521975575029" target="_blank" class="btn-whatsapp-footer">Falar no WhatsApp</a>
   </div>
 </footer>
-
-<a class="flutuante" href="https://wa.me/5521976769602?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Obras%20D%C3%B3ria%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
 
 </body>
 </html>

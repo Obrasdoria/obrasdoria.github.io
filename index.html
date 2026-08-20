@@ -5,54 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Obras Dória | Construção, Reforma e Gestão de Obras — Nova Iguaçu e Rio de Janeiro</title>
 <meta name="description" content="Obras Dória: execução e gestão de obras no Rio de Janeiro. Construção, reforma, alvenaria, acabamento e manutenção. Equipe treinada e acompanhamento em todas as etapas. Atendemos Nova Iguaçu e região.">
-<meta property="og:title" content="Obras Dória | Construindo confiança. Entregando excelência.">
+<meta property="og:title" content="Obras Dória | Construindo confiança. Entregando excelência."> 
 <meta property="og:description" content="Execução e gestão de obras no Rio de Janeiro. Equipe treinada, acompanhamento em todas as etapas e orçamento sem compromisso.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{--escuro:#1c2733;--claro:#f5f3f0;--destaque:#e8a33d;--texto:#3a4450;--zap:#25d366}
+  :root{
+    --escuro: #2c3e50; /* Um azul-cinza mais escuro e sóbrio */
+    --claro: #ecf0f1; /* Um cinza muito claro, quase branco, para fundos */
+    --destaque: #f39c12; /* Um laranja vibrante para elementos de destaque */
+    --texto: #34495e; /* Um azul-cinza escuro para o texto principal */
+    --zap: #27ae60; /* Um verde ligeiramente diferente para o WhatsApp */
+    --branco: #ffffff;
+  }
   html{scroll-behavior:smooth}
-  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--texto);line-height:1.65;background:#fff}
+  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--texto);line-height:1.65;background:var(--branco)}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  header{background:var(--escuro);color:#fff;padding:16px 0;position:sticky;top:0;z-index:10}
+  header{background:var(--escuro);color:var(--branco);padding:16px 0;position:sticky;top:0;z-index:10}
   header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
   .logo{font-size:1.15rem;font-weight:700;letter-spacing:.5px}
   .logo span{color:var(--destaque)}
-  .logo small{display:block;font-size:.6rem;font-weight:400;letter-spacing:2px;color:#9aa5b1;text-transform:uppercase}
-  nav a{color:#dfe4ea;text-decoration:none;margin-left:22px;font-size:.92rem}
+  .logo small{display:block;font-size:.6rem;font-weight:400;letter-spacing:2px;color:#bdc3c7;text-transform:uppercase}
+  nav a{color:#ecf0f1;text-decoration:none;margin-left:22px;font-size:.92rem;transition: color 0.3s ease;}
   nav a:hover{color:var(--destaque)}
-  .hero{background:linear-gradient(rgba(28,39,51,.84),rgba(28,39,51,.84)),url('capa.jpg') center/cover,var(--escuro);color:#fff;padding:104px 0}
+  .hero{
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('hero-bg.jpg') center/cover; /* Substitua 'hero-bg.jpg' por uma foto profissional de obra */
+    color:var(--branco);
+    padding:104px 0;
+    text-align: center; /* Centralizar conteúdo no hero */
+  }
   .local{display:inline-block;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--destaque);margin-bottom:16px}
-  .hero h1{font-size:2.5rem;line-height:1.2;max-width:780px;margin-bottom:18px}
-  .hero .lema{font-size:1.15rem;max-width:660px;color:#e4e8ec}
-  .btn{display:inline-block;background:var(--destaque);color:var(--escuro);padding:15px 32px;border-radius:4px;text-decoration:none;font-weight:600;margin:22px 10px 0 0}
-  .btn.vazio{background:transparent;color:#fff;border:1.5px solid #fff}
-  .btn.verde{background:var(--zap);color:#fff}
+  .hero h1{font-size:2.5rem;line-height:1.2;max-width:780px;margin: 0 auto 18px auto;} /* Centralizar H1 */
+  .hero .lema{font-size:1.15rem;max-width:660px;color:#dfe6e9;margin: 0 auto;} /* Centralizar lema */
+  .btn{display:inline-block;background:var(--destaque);color:var(--escuro);padding:15px 32px;border-radius:4px;text-decoration:none;font-weight:600;margin:22px 10px 0 0;transition: background 0.3s ease;}
+  .btn:hover{background: #e67e22;} /* Laranja mais escuro no hover */
+  .btn.vazio{background:transparent;color:var(--branco);border:1.5px solid var(--branco)}
+  .btn.vazio:hover{background: rgba(255, 255, 255, 0.1);}
+  .btn.verde{background:var(--zap);color:var(--branco)}
+  .btn.verde:hover{background: #2ecc71;}
   section{padding:76px 0}
   .cinza{background:var(--claro)}
   h2{color:var(--escuro);font-size:1.85rem;margin-bottom:14px}
   .sub{margin-bottom:40px;max-width:680px}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
-  .card{background:#fff;padding:30px;border-radius:6px;border-top:3px solid var(--destaque);box-shadow:0 1px 4px rgba(0,0,0,.07)}
+  .card{background:var(--branco);padding:30px;border-radius:6px;border-top:3px solid var(--destaque);box-shadow:0 1px 4px rgba(0,0,0,.07)}
   .card h3{color:var(--escuro);font-size:1.12rem;margin-bottom:10px}
   .card a{color:var(--escuro);font-weight:600}
+  .card img{ max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 4px; } /* Estilo para imagens nos cards */
   ul{margin:14px 0 0 20px}
   li{margin-bottom:7px}
   .duplo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start}
   .assina{margin-top:18px;padding-left:16px;border-left:3px solid var(--destaque);font-style:italic}
   .funcoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  .funcoes span{background:#fff;border:1px solid #dcd7d0;border-radius:50px;padding:10px 22px;font-weight:600;color:var(--escuro)}
+  .funcoes span{background:var(--branco);border:1px solid #dcd7d0;border-radius:50px;padding:10px 22px;font-weight:600;color:var(--escuro)}
   .pilares{list-style:none;margin:0}
   .pilares li{padding-left:26px;position:relative;margin-bottom:12px}
   .pilares li::before{content:"✓";position:absolute;left:0;color:var(--destaque);font-weight:700}
   table{border-collapse:collapse;width:100%;max-width:340px}
   td{padding:6px 0;border-bottom:1px solid #e2ddd6}
   td:last-child{text-align:right;font-weight:600;color:var(--escuro)}
-  footer{background:var(--escuro);color:#aeb8c2;padding:46px 0;font-size:.9rem}
+  footer{background:var(--escuro);color:#bdc3c7;padding:46px 0;font-size:.9rem}
   footer a{color:var(--destaque);text-decoration:none}
-  footer h4{color:#fff;margin-bottom:6px;font-size:1rem}
-  .flutuante{position:fixed;bottom:22px;right:22px;background:var(--zap);color:#fff;padding:15px 26px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:20}
+  footer h4{color:var(--branco);margin-bottom:6px;font-size:1rem}
+  .flutuante{position:fixed;bottom:22px;right:22px;background:var(--zap);color:var(--branco);padding:15px 26px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:20;transition: transform 0.3s ease;}
+  .flutuante:hover{transform: scale(1.05);}
   @media(max-width:600px){.hero{padding:68px 0}.hero h1{font-size:1.7rem}nav a{margin:0 14px 0 0}.flutuante{padding:13px 20px;font-size:.9rem}}
 </style>
 </head>
@@ -109,18 +126,22 @@
     <p class="sub">Atendemos residências, comércios e empresas — desde a construção do zero até reformas pontuais e manutenção.</p>
     <div class="grid">
       <div class="card">
+        <img src="https://images.unsplash.com/photo-1541976844346-f18aeac57b06?q=80&w=600&auto=format&fit=crop" alt="Execução de obras">
         <h3>Execução de obras</h3>
         <p>Construção, reforma, alvenaria, acabamento e manutenção, com equipe própria e parceira.</p>
       </div>
       <div class="card">
+        <img src="https://images.unsplash.com/photo-1503387762-592dea58dd41?q=80&w=600&auto=format&fit=crop" alt="Gestão e acompanhamento">
         <h3>Gestão e acompanhamento</h3>
         <p>Planejamento das etapas, controle do andamento e comunicação clara sobre o que está sendo feito na sua obra.</p>
       </div>
       <div class="card">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Intermediação de profissionais">
         <h3>Intermediação de profissionais</h3>
         <p>Conectamos contratantes a profissionais da construção civil já avaliados por nós, e fazemos a interface entre as duas partes.</p>
       </div>
       <div class="card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=600&auto=format&fit=crop" alt="Gerenciamento de equipes">
         <h3>Gerenciamento de equipes</h3>
         <p>Organização e coordenação da equipe em campo, para que cada etapa saia na ordem e no prazo.</p>
       </div>

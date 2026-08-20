@@ -23,25 +23,27 @@
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--texto-escuro);background:#fff;line-height:1.6}
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
   
-  /* HEADER FIXO SEM SOBREPOSIÇÃO */
-  header{background:var(--azul-header);padding:18px 0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
+  /* HEADER FIXO - LOGO MAIOR E TRANSPARENTE */
+  header{background:var(--azul-header);padding:15px 0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
   header .wrap{display:flex;justify-content:space-between;align-items:center}
-  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo img{height:44px;width:auto;display:block}
+  
+  .logo{display:flex;align-items:center;text-decoration:none; background: transparent;} /* Fundo transparente na logo */
+  .logo img{height:55px; /* Aumentado de 44px para 55px */ width:auto;display:block; background: transparent;} /* Imagem transparente */
+  
   nav a{color:#cbd5e1;text-decoration:none;margin-left:28px;font-size:0.95rem;font-weight:500;transition:color 0.2s}
   nav a:hover{color:var(--dourado)}
   
-  /* HERO SECTION COM LOGO EM MARCA D'ÁGUA E ESPAÇAMENTO AMPLO */
+  /* HERO SECTION COM LOGO EM MARCA D'ÁGUA AMPLIA */
   .hero{
     position: relative;
     background-color: var(--bg-escuro);
     color: var(--texto-claro);
-    padding: 110px 0 100px 0;
+    padding: 130px 0 120px 0; /* Aumentado o padding para acomodar a logo maior */
     text-align: center;
     overflow: hidden;
   }
 
-  /* Camada de fundo com logo transparente */
+  /* Camada de fundo com logo transparente e maior */
   .hero::before {
     content: "";
     position: absolute;
@@ -49,15 +51,15 @@
     background-image: url('WhatsApp Image 2026-08-19 at 16.58.40 (2).jpeg');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 420px auto;
-    opacity: 0.08; /* Transparência suave da logo */
+    background-size: 700px auto; /* Aumentado de 420px para 700px */
+    opacity: 0.07; /* Transparência suave mantida */
     pointer-events: none;
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
-    z-index: 2; /* Garante que os textos e botões fiquem acima do fundo */
+    z-index: 2;
   }
 
   .hero-badge{
@@ -74,13 +76,12 @@
     border: 1px solid rgba(230, 161, 0, 0.3);
   }
 
-  /* TÍTULO PRINCIPAL BEM ESPAÇADO */
   .hero h1{
     font-size: 3rem;
     font-weight: 800;
     line-height: 1.25;
     max-width: 860px;
-    margin: 0 auto 36px auto; /* Espaçamento generoso em relação ao texto seguinte */
+    margin: 0 auto 36px auto;
     color: #ffffff;
     letter-spacing: -0.5px;
   }
@@ -89,7 +90,7 @@
     font-size: 1.2rem;
     color: #cbd5e1;
     max-width: 720px;
-    margin: 0 auto 48px auto; /* Separação limpa até os botões */
+    margin: 0 auto 48px auto;
     line-height: 1.65;
     font-weight: 400;
   }
@@ -111,7 +112,6 @@
   .btn-verde{background:var(--zap-verde);color:#fff}
   .btn-verde:hover{background:#1eb856;transform:translateY(-2px)}
 
-  /* SEÇÕES ORGANIZADAS E REPARTIDAS */
   section{padding:90px 0; position:relative; z-index:2;}
   .bg-cinza{background:var(--cinza-fundo)}
   h2{font-size:2.2rem;color:var(--texto-escuro);font-weight:800;line-height:1.2;margin-bottom:16px}
@@ -159,16 +159,28 @@
   .trabalhe-text h3{font-size:1.8rem;color:var(--dourado);margin-bottom:12px}
   .trabalhe-text p{color:#cbd5e1;font-size:1rem}
 
-  /* CONTATO GRID */
+  /* CONTATO GRID E TABELA DE HORÁRIO AJUSTADA */
   .grid-contato{display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:24px}
   .card-contato{background:#fff;padding:28px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0}
   .card-contato h3{font-size:1.15rem;color:var(--azul-header);margin-bottom:12px;font-weight:700}
   .card-contato p, .card-contato a{color:var(--texto-suave);font-size:0.95rem;text-decoration:none}
   .card-contato a.link-destaque{color:var(--azul-header);font-weight:700;font-size:1.05rem}
   .card-contato a.link-destaque:hover{color:var(--dourado)}
+  
   .tabela-horario{width:100%;border-collapse:collapse;margin-top:8px}
-  .tabela-horario td{padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:0.9rem}
-  .tabela-horario td:last-child{text-align:right;font-weight:600;color:var(--azul-header)}
+  .tabela-horario td{padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:0.9rem; color:var(--texto-suave);}
+  
+  /* AJUSTE FIXO PARA HORÁRIO NÃO QUEBRAR */
+  .tabela-horario td:first-child {
+    white-space: nowrap; /* Impede que 'Segunda a sexta' quebre em duas linhas */
+    padding-right: 15px;
+  }
+  .tabela-horario td:last-child{
+    text-align:right;
+    font-weight:600;
+    color:var(--azul-header);
+    white-space: nowrap; /* Impede que o horário quebre */
+  }
 
   /* FOOTER */
   footer{background:var(--azul-header);color:#94a3b8;padding:48px 0;font-size:0.9rem; position:relative; z-index:2;}
@@ -183,10 +195,11 @@
   /* RESPONSIVIDADE */
   @media (max-width: 900px){
     .sobre-grid, .obras-grid, .cards-pilares{grid-template-columns:1fr}
-    .hero{padding:70px 0 60px 0;}
-    .hero::before{background-size:280px auto;}
+    .hero{padding:90px 0 80px 0;} /* Ajuste de padding no mobile */
+    .hero::before{background-size:400px auto;} /* Logo de fundo menor no mobile */
     .hero h1{font-size:2rem; margin-bottom:24px;}
     .hero .lema{font-size:1.05rem; margin-bottom:32px;}
+    .logo img{height: 45px;} /* Logo do topo um pouco menor no mobile */
     nav{display:none}
     .trabalhe-box{padding:32px;text-align:center}
     .trabalhe-box .btn{width:100%}
@@ -195,7 +208,7 @@
 </head>
 <body>
 
-<!-- HEADER FIXO -->
+<!-- HEADER FIXO - LOGO AJUSTADA -->
 <header>
   <div class="wrap">
     <a href="#" class="logo">
@@ -211,7 +224,7 @@
   </div>
 </header>
 
-<!-- HERO SECTION COM LOGO EM MARCA D'ÁGUA -->
+<!-- HERO SECTION COM MARCA D'ÁGUA AMPLIA -->
 <section class="hero">
   <div class="wrap hero-content">
     <span class="hero-badge">Rio de Janeiro · Nova Iguaçu e região</span>
@@ -262,7 +275,7 @@
         <img src="WhatsApp Image 2026-08-17 at 11.58.20.jpeg" alt="Leandro Dória - Fundador e Gestor">
         <div class="card-gestor-body">
           <h3>Leandro Dória</h3>
-          <p>Com 12 anos de experiência na construção civil, Leandro Dória atua como pedreiro, gestor de obras e intermediador. Entendendo as dificuldades de contratar profissionais de confiança, criou a Obras Dória para conectar clientes aos melhores profissionais, acompanhando a execução para entregar tranquilidade e segurança.</p>
+          <p>Com 12 years de experiência na construção civil, Leandro Dória atua como pedreiro, gestor de obras e intermediador. Entendendo as dificuldades de contratar profissionais de confiança, criou a Obras Dória para conectar clientes aos melhores profissionais, acompanhando a execução para entregar tranquilidade e segurança.</p>
         </div>
       </div>
 
@@ -270,11 +283,12 @@
   </div>
 </section>
 
-<!-- SERVIÇOS -->
+<!-- SERVIÇOS - TEXTO AJUSTADO -->
 <section class="bg-cinza" id="servicos">
   <div class="wrap">
     <h2>Serviços</h2>
-    <p class="sub-titulo">Atendemos residências, comércios e empresas — desde a construção do zero até reformas pontuais e manutenção.</p>
+    <!-- Removido o traço '—' do texto abaixo -->
+    <p class="sub-titulo">Atendemos residências, comércios e empresas desde a construção do zero até reformas pontuais e manutenção.</p>
     
     <div class="grid-servicos">
       <div class="card-servico">
@@ -335,7 +349,7 @@
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- CONTATO - TABELA AJUSTADA -->
 <section class="bg-cinza" id="contato">
   <div class="wrap">
     <h2>Contato</h2>

@@ -5,10 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Obras Dória | Construção, Reforma e Gestão de Obras — Nova Iguaçu e Rio de Janeiro</title>
 <meta name="description" content="Obras Dória: execução e gestão de obras no Rio de Janeiro e Nova Iguaçu. Construção, reforma, alvenaria, acabamento e manutenção com gestão profissional.">
-<meta property="og:title" content="Obras Dória | Construindo confiança. Entregando excelência.">
-<meta property="og:description" content="Execução e gestão de obras no Rio de Janeiro. Equipe treinada, acompanhamento em todas as etapas e orçamento sem compromisso.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
@@ -27,86 +23,138 @@
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--texto-escuro);background:#fff;line-height:1.6}
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
   
-  /* HEADER */
-  header{background:var(--azul-header);padding:18px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.3)}
+  /* HEADER FIXO SEM SOBREPOSIÇÃO */
+  header{background:var(--azul-header);padding:18px 0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
   header .wrap{display:flex;justify-content:space-between;align-items:center}
   .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo img{height:42px;width:auto}
+  .logo img{height:44px;width:auto;display:block}
   nav a{color:#cbd5e1;text-decoration:none;margin-left:28px;font-size:0.95rem;font-weight:500;transition:color 0.2s}
   nav a:hover{color:var(--dourado)}
   
-  /* HERO SECTION COM LOGO TRANSPARENTE NO FUNDO */
+  /* HERO SECTION COM LOGO EM MARCA D'ÁGUA E ESPAÇAMENTO AMPLO */
   .hero{
+    position: relative;
     background-color: var(--bg-escuro);
-    background-image: 
-      linear-gradient(180deg, rgba(7, 18, 36, 0.88) 0%, rgba(10, 25, 47, 0.92) 100%),
-      url('WhatsApp Image 2026-08-19 at 16.58.40 (2).jpeg'); /* Logo de fundo */
+    color: var(--texto-claro);
+    padding: 110px 0 100px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Camada de fundo com logo transparente */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('WhatsApp Image 2026-08-19 at 16.58.40 (2).jpeg');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 550px auto;
-    color: var(--texto-claro);
-    padding: 80px 0 90px 0;
-    text-align: center;
-    position: relative;
+    background-size: 420px auto;
+    opacity: 0.08; /* Transparência suave da logo */
+    pointer-events: none;
+    z-index: 1;
   }
-  .hero-badge{display:inline-block;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:16px;background:rgba(230,161,0,0.1);padding:6px 16px;border-radius:50px;border:1px solid rgba(230,161,0,0.3)}
-  .hero h1{font-size:2.8rem;font-weight:800;line-height:1.2;max-width:850px;margin:0 auto 20px auto}
-  .hero .lema{font-size:1.15rem;color:#cbd5e1;max-width:720px;margin:0 auto 36px auto;line-height:1.6}
-  .hero-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Garante que os textos e botões fiquem acima do fundo */
+  }
+
+  .hero-badge{
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 32px;
+    background: rgba(230, 161, 0, 0.12);
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(230, 161, 0, 0.3);
+  }
+
+  /* TÍTULO PRINCIPAL BEM ESPAÇADO */
+  .hero h1{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.25;
+    max-width: 860px;
+    margin: 0 auto 36px auto; /* Espaçamento generoso em relação ao texto seguinte */
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+
+  .hero .lema{
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 720px;
+    margin: 0 auto 48px auto; /* Separação limpa até os botões */
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  .hero-btns{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
   
-  /* BOTOES */
-  .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;transition:all 0.3s;border:2px solid transparent;cursor:pointer}
-  .btn-dourado-solido{background:linear-gradient(135deg, #f3b11b 0%, #c98a00 100%);color:#0f172a}
-  .btn-dourado-solido:hover{opacity:0.95;transform:translateY(-2px);box-shadow:0 4px 15px rgba(230,161,0,0.3)}
+  /* BOTÕES */
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 36px;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;transition:all 0.3s;border:2px solid transparent;cursor:pointer}
+  .btn-dourado-solido{background:linear-gradient(135deg, #f3b11b 0%, #c98a00 100%);color:#0f172a;box-shadow: 0 4px 15px rgba(230,161,0,0.2)}
+  .btn-dourado-solido:hover{opacity:0.95;transform:translateY(-2px);box-shadow:0 6px 20px rgba(230,161,0,0.4)}
   .btn-dourado-outline{background:transparent;color:var(--dourado);border-color:var(--dourado)}
   .btn-dourado-outline:hover{background:rgba(230,161,0,0.1);transform:translateY(-2px)}
   .btn-verde{background:var(--zap-verde);color:#fff}
   .btn-verde:hover{background:#1eb856;transform:translateY(-2px)}
 
-  /* SEÇOES EM GERAL */
-  section{padding:80px 0}
+  /* SEÇÕES ORGANIZADAS E REPARTIDAS */
+  section{padding:90px 0; position:relative; z-index:2;}
   .bg-cinza{background:var(--cinza-fundo)}
   h2{font-size:2.2rem;color:var(--texto-escuro);font-weight:800;line-height:1.2;margin-bottom:16px}
-  .sub-titulo{font-size:1.05rem;color:var(--texto-suave);margin-bottom:40px;max-width:700px}
+  .sub-titulo{font-size:1.05rem;color:var(--texto-suave);margin-bottom:48px;max-width:700px}
   
   /* SOBRE & GESTOR */
-  .sobre-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start}
-  .lista-check{list-style:none;margin:24px 0}
-  .lista-check li{position:relative;padding-left:28px;margin-bottom:14px;color:var(--texto-suave);font-size:1.05rem;font-weight:500}
-  .lista-check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--dourado);font-weight:900;font-size:1.1rem}
+  .sobre-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start}
+  .lista-check{list-style:none;margin:28px 0}
+  .lista-check li{position:relative;padding-left:32px;margin-bottom:16px;color:var(--texto-suave);font-size:1.05rem;font-weight:500}
+  .lista-check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--dourado);font-weight:900;font-size:1.2rem}
   
-  /* CARDS DOURADOS DE PILARES */
-  .cards-pilares{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:36px}
+  /* CARDS DOURADOS */
+  .cards-pilares{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:40px}
   .card-pilar{background:linear-gradient(135deg, #f5b72b 0%, #d49400 100%);padding:24px 16px;border-radius:12px;text-align:center;color:#0f172a;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
   .card-pilar .icone{font-size:2rem;margin-bottom:8px}
   .card-pilar h3{font-size:1.1rem;font-weight:800;margin-bottom:8px}
   .card-pilar p{font-size:0.88rem;line-height:1.4;font-weight:600;opacity:0.95}
   
   /* CARD LEANDRO DORIA */
-  .card-gestor{background:var(--card-escuro);border-radius:16px;overflow:hidden;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.2)}
+  .card-gestor{background:var(--card-escuro);border-radius:16px;overflow:hidden;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.15)}
   .card-gestor img{width:100%;height:320px;object-fit:cover;object-position:top;display:block}
   .card-gestor-body{padding:28px}
   .card-gestor-body h3{font-size:1.5rem;color:var(--dourado);font-weight:800;margin-bottom:10px}
   .card-gestor-body p{color:#cbd5e1;font-size:0.95rem;line-height:1.6}
   
-  /* SERVIÇOS & GRID */
+  /* SERVIÇOS GRID */
   .grid-servicos{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:24px}
-  .card-servico{background:#fff;padding:28px;border-radius:12px;border-top:4px solid var(--dourado);box-shadow:0 4px 15px rgba(0,0,0,0.05);transition:transform 0.2s}
+  .card-servico{background:#fff;padding:32px;border-radius:12px;border-top:4px solid var(--dourado);box-shadow:0 4px 15px rgba(0,0,0,0.05);transition:transform 0.2s}
   .card-servico:hover{transform:translateY(-4px)}
   .card-servico h3{font-size:1.2rem;color:var(--azul-header);margin-bottom:12px;font-weight:700}
   .card-servico p{font-size:0.95rem;color:var(--texto-suave)}
   
-  .tags-profissionais{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .tags-profissionais{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
   .tag{background:#fff;border:1px solid #cbd5e1;padding:8px 20px;border-radius:50px;font-size:0.9rem;font-weight:700;color:var(--azul-header);box-shadow:0 2px 5px rgba(0,0,0,0.03)}
 
-  /* NOSSAS OBRAS (GALERIA) */
-  .obras-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  /* GALERIA DE OBRAS */
+  .obras-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
   .obra-card{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);background:#fff}
   .obra-card img{width:100%;height:340px;object-fit:cover;display:block}
-  .obra-card .legenda{padding:16px;font-weight:700;color:var(--azul-header);text-align:center;background:#fff}
+  .obra-card .legenda{padding:18px;font-weight:700;color:var(--azul-header);text-align:center;background:#fff}
 
   /* TRABALHE CONOSCO */
-  .trabalhe-box{background:var(--card-escuro);color:#fff;padding:48px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+  .trabalhe-box{background:var(--card-escuro);color:#fff;padding:52px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px}
   .trabalhe-text{max-width:650px}
   .trabalhe-text h3{font-size:1.8rem;color:var(--dourado);margin-bottom:12px}
   .trabalhe-text p{color:#cbd5e1;font-size:1rem}
@@ -119,24 +167,26 @@
   .card-contato a.link-destaque{color:var(--azul-header);font-weight:700;font-size:1.05rem}
   .card-contato a.link-destaque:hover{color:var(--dourado)}
   .tabela-horario{width:100%;border-collapse:collapse;margin-top:8px}
-  .tabela-horario td{padding:4px 0;border-bottom:1px solid #f1f5f9;font-size:0.9rem}
+  .tabela-horario td{padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:0.9rem}
   .tabela-horario td:last-child{text-align:right;font-weight:600;color:var(--azul-header)}
 
-  /* FOOTER & BOTÃO FLUTUANTE */
-  footer{background:var(--azul-header);color:#94a3b8;padding:40px 0;font-size:0.9rem}
+  /* FOOTER */
+  footer{background:var(--azul-header);color:#94a3b8;padding:48px 0;font-size:0.9rem; position:relative; z-index:2;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-  footer h4{color:#fff;font-size:1.1rem;margin-bottom:4px}
+  footer h4{color:#fff;font-size:1.1rem;margin-bottom:6px}
   footer a{color:var(--dourado);text-decoration:none}
   footer a:hover{text-decoration:underline}
   
-  .btn-flutuante{position:fixed;bottom:24px;right:24px;background:var(--zap-verde);color:#fff;padding:14px 24px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:99;display:flex;align-items:center;gap:8px;transition:all 0.3s}
+  .btn-flutuante{position:fixed;bottom:24px;right:24px;background:var(--zap-verde);color:#fff;padding:14px 24px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:9999;display:flex;align-items:center;gap:8px;transition:all 0.3s}
   .btn-flutuante:hover{transform:scale(1.05);background:#1eb856}
   
   /* RESPONSIVIDADE */
   @media (max-width: 900px){
     .sobre-grid, .obras-grid, .cards-pilares{grid-template-columns:1fr}
-    .hero h1{font-size:2rem}
-    .hero{background-size:350px auto}
+    .hero{padding:70px 0 60px 0;}
+    .hero::before{background-size:280px auto;}
+    .hero h1{font-size:2rem; margin-bottom:24px;}
+    .hero .lema{font-size:1.05rem; margin-bottom:32px;}
     nav{display:none}
     .trabalhe-box{padding:32px;text-align:center}
     .trabalhe-box .btn{width:100%}
@@ -145,7 +195,7 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER FIXO -->
 <header>
   <div class="wrap">
     <a href="#" class="logo">
@@ -161,9 +211,9 @@
   </div>
 </header>
 
-<!-- HERO SECTION COM MARCA D'ÁGUA NO FUNDO -->
+<!-- HERO SECTION COM LOGO EM MARCA D'ÁGUA -->
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-content">
     <span class="hero-badge">Rio de Janeiro · Nova Iguaçu e região</span>
     <h1>Sua obra em boas mãos, do primeiro tijolo à entrega</h1>
     <p class="lema">Execução e gestão de obras com equipe treinada, planejamento e acompanhamento em todas as etapas. Construção, reforma, manutenção e acabamento para residências, comércios e empresas.</p>
@@ -179,7 +229,6 @@
   <div class="wrap">
     <div class="sobre-grid">
       
-      <!-- LADO ESQUERDO: QUEM SOMOS -->
       <div class="sobre-conteudo">
         <h2>Construindo confiança.<br>Entregando excelência.</h2>
         <p style="margin-top:16px; color: var(--texto-suave);">Construir não é apenas levantar paredes. É transformar planos em realidade, com responsabilidade, organização e confiança.</p>
@@ -190,7 +239,6 @@
           <li>Confiança, transparência e respeito ao seu investimento</li>
         </ul>
 
-        <!-- CARDS DOURADOS -->
         <div class="cards-pilares">
           <div class="card-pilar">
             <div class="icone">🛠️</div>
@@ -210,7 +258,6 @@
         </div>
       </div>
 
-      <!-- LADO DIREITO: CARD LEANDRO DÓRIA -->
       <div class="card-gestor">
         <img src="WhatsApp Image 2026-08-17 at 11.58.20.jpeg" alt="Leandro Dória - Fundador e Gestor">
         <div class="card-gestor-body">
